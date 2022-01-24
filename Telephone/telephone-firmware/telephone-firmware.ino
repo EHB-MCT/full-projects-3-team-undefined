@@ -17,9 +17,9 @@ int ringTime = 100;
 
 int disconnectPin = 2;
 
-bool phoneRinging = false;
-
 bool coolDown = false;
+
+bool pickedUp = false;
 
 void setup() {
   pinMode(disconnectPin, INPUT_PULLUP);
@@ -37,7 +37,7 @@ void loop() {
   // Serial.println(distance);
   delay(10);
   if (coolDown == false && distance > 104) {
-    ringBell(4);
+    ringBell();
   }
   //  if (analogRead(distanceSensor) > 100 && phoneRinging == false) {
   //    phoneRinging = true;
@@ -56,16 +56,22 @@ void loop() {
   //  MP3player.setVolume(10,10);
 }
 
-void ringBell(int amount) {
-  for (int i = 0; i < amount; i++) {
+void ringBell() {
+  for (int i = 0; i < 4; i++) {
+    if (pickedUp) {
+      break;
+    }
     Serial.println("ringing");
     for (int i = 0; i < 30; i++) {
-      //      digitalWrite(BELL1, HIGH);
-      //      digitalWrite(BELL2, LOW);
-      //      delay(40);
-      //      digitalWrite(BELL1, LOW);
-      //      digitalWrite(BELL2, HIGH);
-      //      delay(40);
+      if (pickedUp) {
+        break;
+      }
+      digitalWrite(BELL1, HIGH);
+      digitalWrite(BELL2, LOW);
+      delay(40);
+      digitalWrite(BELL1, LOW);
+      digitalWrite(BELL2, HIGH);
+      delay(40);
     }
     delay(1000);
   }
@@ -73,4 +79,5 @@ void ringBell(int amount) {
 
 void pickedUpPhone() {
   Serial.println("Telephone was picked up");
+  pickedUp = true;
 }
