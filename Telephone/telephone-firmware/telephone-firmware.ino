@@ -24,34 +24,40 @@ void setup() {
   pinMode(distanceSensor, INPUT);
   pinMode(BELL1, OUTPUT);
   pinMode(BELL2, OUTPUT);
+  ringBell(4);
 }
 
 void loop() {
   Serial.begin(115200);
-  if (analogRead(distanceSensor) > 100 && phoneRinging == false) {
-    phoneRinging = true;
-    for (int i = 0; i < ringTime; i++) {
-      ringBell();
-      if (phoneRinging == false) {
-        break;
-      }
-      checkRinging();
-    }
-  }
-  if (!sd.begin(9, SPI_HALF_SPEED)) sd.initErrorHalt();
-  if (!sd.chdir("/")) sd.errorHalt("sd.chdir");
-
-  MP3player.begin();
-  MP3player.setVolume(10,10);
+  //  if (analogRead(distanceSensor) > 100 && phoneRinging == false) {
+  //    phoneRinging = true;
+  //    for (int i = 0; i < ringTime; i++) {
+  //      ringBell();
+  //      if (phoneRinging == false) {
+  //        break;
+  //      }
+  //      checkRinging();
+  //    }
+  //  }
+  //  if (!sd.begin(9, SPI_HALF_SPEED)) sd.initErrorHalt();
+  //  if (!sd.chdir("/")) sd.errorHalt("sd.chdir");
+  //
+  //  MP3player.begin();
+  //  MP3player.setVolume(10,10);
 }
 
-void ringBell() {
-  digitalWrite(BELL1, HIGH);
-  digitalWrite(BELL2, LOW);
-  delay(40);
-  digitalWrite(BELL1, LOW);
-  digitalWrite(BELL2, HIGH);
-  delay(40);
+void ringBell(int amount) {
+  for (int i = 0; i < amount; i++) {
+    for (int i = 0; i < 30; i++) {
+      digitalWrite(BELL1, HIGH);
+      digitalWrite(BELL2, LOW);
+      delay(40);
+      digitalWrite(BELL1, LOW);
+      digitalWrite(BELL2, HIGH);
+      delay(40);
+    }
+    delay(1000);
+  }
 }
 
 void checkRinging() {
