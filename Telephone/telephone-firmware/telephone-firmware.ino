@@ -15,20 +15,30 @@ int distance = 0;                 // variable to store the values from sensor(in
 
 int ringTime = 100;
 
-int disconnectPin = 3;
+int disconnectPin = 2;
 
 bool phoneRinging = false;
+
+bool coolDown = false;
 
 void setup() {
   pinMode(disconnectPin, INPUT_PULLUP);
   pinMode(distanceSensor, INPUT);
   pinMode(BELL1, OUTPUT);
   pinMode(BELL2, OUTPUT);
-  ringBell(4);
+  // delay(30000);
+  attachInterrupt(digitalPinToInterrupt(disconnectPin), pickedUpPhone, RISING);
+  Serial.println("Telephone activated");
 }
 
 void loop() {
   Serial.begin(115200);
+  distance = analogRead(distanceSensor);
+  // Serial.println(distance);
+  delay(10);
+  if (coolDown == false && distance > 104) {
+    ringBell(4);
+  }
   //  if (analogRead(distanceSensor) > 100 && phoneRinging == false) {
   //    phoneRinging = true;
   //    for (int i = 0; i < ringTime; i++) {
@@ -36,7 +46,7 @@ void loop() {
   //      if (phoneRinging == false) {
   //        break;
   //      }
-  //      checkRinging();
+  //      checkRinging(cd );
   //    }
   //  }
   //  if (!sd.begin(9, SPI_HALF_SPEED)) sd.initErrorHalt();
@@ -48,26 +58,19 @@ void loop() {
 
 void ringBell(int amount) {
   for (int i = 0; i < amount; i++) {
+    Serial.println("ringing");
     for (int i = 0; i < 30; i++) {
-      digitalWrite(BELL1, HIGH);
-      digitalWrite(BELL2, LOW);
-      delay(40);
-      digitalWrite(BELL1, LOW);
-      digitalWrite(BELL2, HIGH);
-      delay(40);
+      //      digitalWrite(BELL1, HIGH);
+      //      digitalWrite(BELL2, LOW);
+      //      delay(40);
+      //      digitalWrite(BELL1, LOW);
+      //      digitalWrite(BELL2, HIGH);
+      //      delay(40);
     }
     delay(1000);
   }
 }
 
-void checkRinging() {
-  bool state = digitalRead(disconnectPin);
-  Serial.println(state);
-  if (state == HIGH) {
-    phoneRinging = false;
-    MP3player.playMP3("track001.mp3");
-    while (MP3player.isPlaying()) {
-      Serial.println("playing");
-    }
-  }
+void pickedUpPhone() {
+  Serial.println("Telephone was picked up");
 }
