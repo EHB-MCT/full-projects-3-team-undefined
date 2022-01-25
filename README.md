@@ -65,3 +65,7 @@ Python modules:
 - matplotlib
 - argparse
 - Pillow _Repository states PIL but only works with Pillow_
+
+## 4. Fake mirror
+
+Facial Landmark Detection with Mediapipe & Creating Animated Snapchat filters, Taha Anwar & Rizwan Naeem, 29/10/2021  - https://bleedai.com/facial-landmark-detection-with-mediapipe-creating-animated-snapchat-filters/
