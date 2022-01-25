@@ -6,7 +6,7 @@ import "../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js";
 
 window.onload = function () {
     showWelcomePopup();
-
+    checkDevice();
     document.getElementById('popupClose').addEventListener("click", (e) => {
         document.getElementById('popupContainer').style.display = "none";
         const popupContents = document.getElementsByClassName('popupContent');
@@ -38,6 +38,12 @@ window.onload = function () {
         document.getElementById("popupContainer").classList.toggle("darkmodePopup");
         document.getElementById("askLandscape").classList.toggle("darkmode");
     })
+}
+
+function checkDevice() {
+    if (window.screen.width > 1024) {
+        document.getElementById('phoneWarning').innerText = ""
+    }
 }
 
 function showWelcomePopup() {
