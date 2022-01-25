@@ -60,13 +60,13 @@ def detectFacialLandmarks(image, face_mesh, display = True):
                                       landmark_drawing_spec=None, 
                                       connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_tesselation_style())
  
-            # Draw the facial landmarks on the output image with the face mesh contours
+           # Draw the facial landmarks on the output image with the face mesh contours
             # connections using default face mesh contours style.
             mp_drawing.draw_landmarks(image=output_image, landmark_list=face_landmarks,
                                       connections=mp_face_mesh.FACEMESH_CONTOURS,
                                       landmark_drawing_spec=None, 
                                       connection_drawing_spec=mp_drawing_styles.get_default_face_mesh_contours_style())
- 
+
     # Check if the original input image and the output image are specified to be displayed.
     if display:
         
@@ -152,8 +152,8 @@ def overlay(image, filter_img, face_landmarks, INDEXES, display=True):
         _, face_part_height, landmarks = getSize(image, face_landmarks, INDEXES)
         
         # Specify the height to which the filter image is required to be resized.
-        required_height = int(face_part_height*2.5)
-        
+        required_height = int(face_part_height/3)
+                
         # Resize the filter image to the required height, while keeping the aspect ratio constant. 
         resized_filter_img = cv2.resize(filter_img, (int(filter_img_width*
                                                          (required_height/filter_img_height)),
@@ -168,15 +168,14 @@ def overlay(image, filter_img, face_landmarks, INDEXES, display=True):
  
         # Calculate the center of the face part.
         center = landmarks.mean(axis=0).astype("int")
- 
+    
         
-        # Calculate the location where the smoke filter will be placed.  
-        location = (int(center[0] - filter_img_width / 3), int(center[1]))
+        # Calculate the location where the filter will be placed.  
+        location = (int(center[0] - filter_img_width/2), int(center[1] - face_part_height))
  
         # Retrieve the region of interest from the image where the filter image will be placed.
         ROI = image[location[1]: location[1] + filter_img_height,
                     location[0]: location[0] + filter_img_width]
- 
         # Perform Bitwise-AND operation. This will set the pixel values of the region where,
         # filter image will be placed to zero.
         resultant_image = cv2.bitwise_and(ROI, ROI, mask=filter_img_mask)
@@ -196,14 +195,12 @@ def overlay(image, filter_img, face_landmarks, INDEXES, display=True):
     
     # Check if the annotated image is specified to be displayed.
     if display:
- 
         # Display the annotated image.
         plt.figure(figsize=[10,10])
         plt.imshow(annotated_image[:,:,::-1]);plt.title("Output Image");plt.axis('off');
     
     # Otherwise
     else:
-            
         # Return the annotated image.
         return annotated_image
 
@@ -239,7 +236,7 @@ while camera_video.isOpened():
 
     if face_mesh_results.multi_face_landmarks:
         for face_num, face_landmarks in enumerate(face_mesh_results.multi_face_landmarks):
-            frame = overlay(frame, emoji, face_landmarks, mp_face_mesh.FACEMESH_LIPS,display=False)
+            frame = overlay(frame, emoji, face_landmarks, mp_face_mesh.FACEMESH_FACE_OVAL,display=False)
     
         
     # Display the frame.
