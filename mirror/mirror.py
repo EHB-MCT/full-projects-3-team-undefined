@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 
 # Initialize the mediapipe face detection class.
 mp_face_detection = mp.solutions.face_detection
+
  
 # Setup the face detection function.
 face_detection = mp_face_detection.FaceDetection(model_selection=0, min_detection_confidence=0.5)
