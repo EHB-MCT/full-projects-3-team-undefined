@@ -1,69 +1,56 @@
-// libraries
-#include <SPI.h>
-#include <SdFat.h>
-#include <vs1053_SdFat.h>
+int BELL1 = 10;
+int BELL2 = 11;
 
-SdFat sd;
-vs1053 MP3player;
-int8_t current_track = 0;
-
-int BELL1 = 5;
-int BELL2 = 4;
-
-int distanceSensor = 0;                 // analog pin used to connect the sharp sensor
+int distanceSensor = A0;                 // analog pin used to connect the sharp sensor
 int distance = 0;                 // variable to store the values from sensor(initially zero)
-
-int ringTime = 100;
 
 int disconnectPin = 2;
 
+int disconnectState = false;
+
 bool coolDown = false;
 
-bool pickedUp = false;
+volatile bool pickedUp = false;
+
+unsigned long button_time = 0;
+unsigned long last_button_time = 0;
 
 void setup() {
+  Serial.begin(115200);
   pinMode(disconnectPin, INPUT_PULLUP);
   pinMode(distanceSensor, INPUT);
   pinMode(BELL1, OUTPUT);
   pinMode(BELL2, OUTPUT);
-  // delay(30000);
-  attachInterrupt(digitalPinToInterrupt(disconnectPin), pickedUpPhone, RISING);
+  delay(3000);
   Serial.println("Telephone activated");
 }
 
 void loop() {
-  Serial.begin(115200);
+
   distance = analogRead(distanceSensor);
+  // disconnectState = digitalRead(disconnectPin);
   // Serial.println(distance);
   delay(10);
-  if (coolDown == false && distance > 104) {
+  checkSwitchState();
+  if (coolDown == false && distance > 104 && !disconnectState) {
     ringBell();
+    checkSwitchState();
+    if (disconnectState) {
+      Serial.println("play audio");
+    }
   }
-  //  if (analogRead(distanceSensor) > 100 && phoneRinging == false) {
-  //    phoneRinging = true;
-  //    for (int i = 0; i < ringTime; i++) {
-  //      ringBell();
-  //      if (phoneRinging == false) {
-  //        break;
-  //      }
-  //      checkRinging(cd );
-  //    }
-  //  }
-  //  if (!sd.begin(9, SPI_HALF_SPEED)) sd.initErrorHalt();
-  //  if (!sd.chdir("/")) sd.errorHalt("sd.chdir");
-  //
-  //  MP3player.begin();
-  //  MP3player.setVolume(10,10);
 }
 
 void ringBell() {
+  Serial.println("ringing");
   for (int i = 0; i < 4; i++) {
-    if (pickedUp) {
+    checkSwitchState();
+    if (disconnectState) {
       break;
     }
-    Serial.println("ringing");
     for (int i = 0; i < 30; i++) {
-      if (pickedUp) {
+      checkSwitchState();
+      if (disconnectState) {
         break;
       }
       digitalWrite(BELL1, HIGH);
@@ -75,9 +62,9 @@ void ringBell() {
     }
     delay(1000);
   }
+  Serial.println("Stopped ringing");
 }
 
-void pickedUpPhone() {
-  Serial.println("Telephone was picked up");
-  pickedUp = true;
+void checkSwitchState() {
+  disconnectState = digitalRead(disconnectPin);
 }
