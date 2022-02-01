@@ -23,7 +23,7 @@
 <body>
     <div id="askLandscape">
         <div class="phone"></div>
-        <h2>Draai uw scherm aub</h2>
+        <h2 id="turnScreen">Draai uw scherm aub</h2>
     </div>
     <div id="help"><i class="fas fa-question-circle"></i></div>
     <section id="homepage">
@@ -36,7 +36,7 @@
             </div>
 
             <div id="darkmodeSwitch">
-                <p>Darkmode</p>
+                <p id="darkmodeLabel">Darkmode</p>
                 <label class="switch">
                     <input type="checkbox" id="darkmodeSlider">
                     <span class="slider round"></span>
@@ -146,7 +146,7 @@
         <div id="welcomeClose" class="closeBtn"><i class="fas fa-times"></i></div>
         <h2>{{popup_title}}</h2>
         <p>{{popup_text}}</p>
-        <button id="welcomeBtn" class="popupBtn">Test</button>
+        <button id="welcomeBtn" class="popupBtn">{{popup_button}}</button>
     </div>
 
 </body>

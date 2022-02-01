@@ -3,16 +3,14 @@
     "popup_text": "You are entering the authentic house of a track foreman in the year 1958. Click on the different objects on the map to find out more!",
     "popup_button": "Start your visit",
     "main_darkmodeButton": "Darkmode",
+    "main_turnScreen": "Turn your screen",
     "phone_title": "The track foreman's phone",
     "phone_text": "A track foreman was assigned a particular section of the railroad network. He was responsible for the railroad traffic running smoothly within his sector, by ensuring that the tracks were maintained and repair work was carried out. The track foreman had several teams of tracklayers under him. An important job! Is the telephone ringing? Pick it up quickly, and listen to the story of the track foreman!",
-    "phone_button": "Back to the living room",
+    "backLiving_text": "Back to the living room",
     "table_title": "Expo '58",
     "table_text": "On the table of the track foreman's house you can find articles from the year 1958. A historic year for Belgium, that year the World Expo was held in Brussels. The theme of the exhibition was 'Balancing the world, for a more humane world'. The train was certainly not to be missed at Expo 58. In a station with eight tracks, sixty some of the very latest railroad vehicles from all over the world were on display: diesel and electric locomotives, diesel railcars, electric motor coaches, ordinary carriages, freight wagons and cargo wagons.",
-    "table_button": "Back to the living room",
     "portrait_title": "The Telemans family",
     "portrait_text": "Originally, the Telemans family was from Limburg. It is also there that their adventures began. Father Telemans started at the NMBS as a railroad worker in Genk and climbed up the ranks  until he became shift manager in Hasselt. After his promotion to track manager in 1939, the entire family had to move to Evere. Three years later he became track superintendent in Schaarbeek and they went to live in the railroad house that you see here now. In 1958 father Telemans retired and the family had to leave the house. After that they lived in Zellik and Uccle. The following years when the children started getting married and leaving the house, the parents decided to return to Limburg.",
-    "portrait_button": "Back to the living room",
     "mirror_title": "The uniform of the foreman's",
-    "mirror_text": "Over the years, the trackmaster's uniform changed several times. In the trackmaster's house you can see several of them. Take a look in the mirror. There you will see yourself as a real track master!",
-    "mirror_button": "Back to living room"
+    "mirror_text": "Over the years, the trackmaster's uniform changed several times. In the trackmaster's house you can see several of them. Take a look in the mirror. There you will see yourself as a real track master!"
 }

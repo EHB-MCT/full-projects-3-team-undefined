@@ -21,6 +21,7 @@
   "homepage": "https://github.com/EHB-MCT/full-projects-3-team-undefined#readme",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.4",
+    "fs": "^0.0.1-security",
     "glob": "^7.2.0",
     "webpack": "^5.66.0",
     "webpack-cli": "^4.9.1"
