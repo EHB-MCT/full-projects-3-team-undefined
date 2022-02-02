@@ -154,7 +154,6 @@ window.onload = function () {
 
         // change help popup language
         let helpPopup = document.getElementById('helpPopup');
-        console.log(dataLanguage.help_text1);
         helpPopup.innerHTML = `
         <div id="helpClose" class="closeBtn"><i class="fas fa-times"></i></div>
         <h2>${dataLanguage.help_title}</h2>

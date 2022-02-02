@@ -18,9 +18,7 @@ self.addEventListener('install', e => {
     e.waitUntil(
         caches.open(staticCacheName)
         .then(cache => {
-            console.log('caching')
             for (let asset of assets) {
-                console.log(asset);
                 cache.add(asset);
             }
         })
