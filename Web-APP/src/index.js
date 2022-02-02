@@ -67,7 +67,8 @@ window.onload = function () {
             if (pulseElement) {
                 pulseElement.setAttribute("stroke", "#eadec7")
             }
-
+            popupContainer.removeEventListener("animationend", removeContent, true);
+            popupContainer.classList.remove('fade-out');
             popupContainer.classList.add('fade-in');
         }
     })
@@ -254,13 +255,17 @@ function closeHelpPopup() {
 }
 
 function closePopups() {
+    const popupContainer = document.getElementById("popupContainer")
+    popupContainer.classList.remove('fade-in');
+    popupContainer.classList.add('fade-out');
+
+    popupContainer.addEventListener("animationend", removeContent, true);
+
     const popupTexts = document.getElementsByClassName('popupText');
     for (let text of popupTexts) {
         text.scrollTop = 0;
     }
 
-    document.getElementById('popupContainer').style.display = "none";
-    document.getElementById('popupOverlay').style.display = 'none';
 
     const popupContents = document.getElementsByClassName('popupContent');
     for (let content of popupContents) {
@@ -271,4 +276,9 @@ function closePopups() {
     guidoVideo.pause();
     guidoVideo.currentTime = 0;
     guidoVideo.load();
+}
+
+function removeContent() {
+    popupContainer.style.display = "none";
+    document.getElementById('popupOverlay').style.display = 'none';
 }
