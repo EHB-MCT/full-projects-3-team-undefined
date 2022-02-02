@@ -4,8 +4,8 @@
     "background_color": "#eadec6",
     "display": "fullscreen",
     "orientation": "landscape",
-    "scope": "/docs/",
-    "start_url": "./docs/index.html",
+    "scope": "/",
+    "start_url": "/index.html",
     "icons": [{
             "src": "./docs/images/TrainWorld_512.png",
             "type": "image/png",
