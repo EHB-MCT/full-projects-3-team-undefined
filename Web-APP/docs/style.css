@@ -54,6 +54,7 @@ li {
 body {
     background-color: var(--background);
     min-height: 100vh;
+    height: 100vh;
     width: 100vw;
 }
 
@@ -146,8 +147,6 @@ body {
         font-size: 13.3px;
         display: inline-block !important;
         box-sizing: border-box;
-
-
     }
 
     #welcomeBtn {
@@ -223,6 +222,11 @@ body {
         width: 10%;
     }
 
+    #sidebalk img {
+        width: 100%;
+        height: auto;
+    }
+
     #helpBtn {
         position: absolute;
         right: 15px;
@@ -249,6 +253,7 @@ body {
         text-align: center;
 
         margin: 0.6em 0;
+        color: black;
     }
 
     #buttonNL {
@@ -343,9 +348,14 @@ body {
         -webkit-backface-visibility: hidden;
     }
 
+    #groundPlan svg {
+        width: 100%;
+    }
+
     #groundPlan svg image {
         width: 100%;
     }
+
 
     .overlay {
         width: 100vw;

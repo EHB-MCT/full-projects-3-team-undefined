@@ -60,6 +60,7 @@ window.onload = function () {
 
             if (objectName == "portrait") {
                 const guidoVideo = document.getElementById("guidoVideo");
+                guidoVideo.setAttribute('playsinline', true);
                 guidoVideo.play();
             }
 
@@ -80,6 +81,7 @@ window.onload = function () {
         document.getElementById("popupContainer").classList.toggle("darkmodePopup");
         document.getElementById("askLandscape").classList.toggle("darkmode");
         document.getElementById('helpPopup').classList.toggle("darkmodePopup");
+        document.getElementById('languages').classList.toggle("darkmode");
     })
 
     // change language menu when language is clicked
@@ -123,7 +125,7 @@ window.onload = function () {
         </div>
         <div id="portraitPopup" class="popupContent">
             <div class="popupImgContainer">
-                <video id="guidoVideo" src="./videos/Guido.mp4"></video>
+                <video id="guidoVideo" src="./videos/Guido.mp4" playsinline></video>
             </div>
             <div class="popupText">
                 <h2>${dataLanguage.portrait_title}</h2>
