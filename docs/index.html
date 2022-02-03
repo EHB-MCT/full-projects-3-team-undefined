@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="nl">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#f37020" />
     <link rel="stylesheet" href="./style.css" />
-    <link
-      rel="shortcut icon"
-      href="../images/favicon/FaviconTrainWorld.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="./images/favicon/FaviconTrainWorld.png" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="./images/TrainWorld_512.png">
     <link rel="stylesheet" href="https://use.typekit.net/ftc8abr.css" />
     <link rel="manifest" href="./manifest.json" />
     <title>Baanmeesterhuis</title>
@@ -20,127 +18,62 @@
     <!-- <script defer src="../node_modules/@fortawesome/fontawesome-free/js/brands.js"></script>
     <script defer src="../node_modules/@fortawesome/fontawesome-free/js/solid.js"></script>
     <script defer src="../node_modules/@fortawesome/fontawesome-free/js/fontawesome.js"></script> -->
-  </head>
+</head>
 
-  <body>
+<body>
     <div id="askLandscape">
-      <div class="phone"></div>
-      <h2 id="turnScreen">Draai uw scherm aub</h2>
+        <div class="phone"></div>
+        <h2 id="turnScreen">Draai uw scherm aub</h2>
     </div>
     <div id="helpBtn"><i class="fas fa-question-circle"></i></div>
     <section id="homepage">
-      <div id="sidebalk">
-        <img src="./images/trainworld-logo.jpg" alt="Trainworld logo" />
-        <div id="languages">
-          <button id="buttonNL">NL</button>
-          <button id="buttonEN">EN</button>
-          <button id="buttonFR">FR</button>
-        </div>
+        <div id="sidebalk">
+            <img src="./images/trainworld-logo.jpg" alt="Trainworld logo" />
+            <div id="languages">
+                <button id="buttonNL">NL</button>
+                <button id="buttonEN">EN</button>
+                <button id="buttonFR">FR</button>
+            </div>
 
-        <div id="darkmodeSwitch">
-          <p>Darkmode</p>
-          <label class="switch">
-            <input type="checkbox" id="darkmodeSlider" />
-            <span class="slider round"></span>
-          </label>
+            <div id="darkmodeSwitch">
+                <p>Darkmode</p>
+                <label class="switch">
+                    <input type="checkbox" id="darkmodeSlider" />
+                    <span class="slider round"></span>
+                </label>
+            </div>
         </div>
-      </div>
-      <div id="groundPlan">
-        <svg
-          id="groundPlanSvg"
-          version="1.1"
-          xmlns="http://www.w3.org/2000/svg"
-          xmlns:xlink="http://www.w3.org/1999/xlink"
-          viewBox="0 1 100 64"
-        >
-          <image xlink:href="./images/home_images/floor_plan.jpg"></image>
-          <g transform="translate(54,20)">
-            <circle
-              class="pulse"
-              id="tablePulse"
-              cx="0"
-              cy="0"
-              r="7"
-              stroke="#fc4c00"
-            />
-          </g>
-          <rect
-            class="clickableObject"
-            id="tableTarget"
-            data-name="table"
-            x="39"
-            y="15"
-            opacity="0"
-            width="30"
-            height="10"
-          />
-          <g transform="translate(92,29)">
-            <circle
-              class="pulse"
-              id="phonePulse"
-              cx="0"
-              cy="0"
-              r="7"
-              stroke="#fc4c00"
-            />
-          </g>
-          <rect
-            class="clickableObject"
-            id="phoneTarget"
-            data-name="phone"
-            x="89"
-            y="25"
-            opacity="0"
-            width="6"
-            height="9"
-          />
-          <g transform="translate(57,6)">
-            <circle
-              class="pulse"
-              id="portraitPulse"
-              cx="0"
-              cy="0"
-              r="7"
-              stroke="#fc4c00"
-            />
-          </g>
-          <rect
-            class="clickableObject"
-            id="portraitTarget"
-            data-name="portrait"
-            x="46"
-            y="3"
-            opacity="0"
-            width="22"
-            height="6"
-          />
-          <g transform="translate(7,33)">
-            <circle
-              class="pulse"
-              id="mirrorPulse"
-              cx="0"
-              cy="0"
-              r="7"
-              stroke="#fc4c00"
-            />
-          </g>
-          <rect
-            class="clickableObject"
-            id="mirrorTarget"
-            data-name="mirror"
-            x="3"
-            y="27"
-            opacity="0"
-            width="8"
-            height="12"
-          />
-          <!-- <g transform="translate(87,51)">
+        <div id="groundPlan">
+            <svg id="groundPlanSvg" version="1.1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 1 100 64">
+                <image xlink:href="./images/home_images/floor_plan.jpg"></image>
+                <g transform="translate(54,20)">
+                    <circle class="pulse" id="tablePulse" cx="0" cy="0" r="7" stroke="#fc4c00" />
+                </g>
+                <rect class="clickableObject" id="tableTarget" data-name="table" x="39" y="15" opacity="0" width="30"
+                    height="10" />
+                <g transform="translate(92,29)">
+                    <circle class="pulse" id="phonePulse" cx="0" cy="0" r="7" stroke="#fc4c00" />
+                </g>
+                <rect class="clickableObject" id="phoneTarget" data-name="phone" x="89" y="25" opacity="0" width="6"
+                    height="9" />
+                <g transform="translate(57,6)">
+                    <circle class="pulse" id="portraitPulse" cx="0" cy="0" r="7" stroke="#fc4c00" />
+                </g>
+                <rect class="clickableObject" id="portraitTarget" data-name="portrait" x="46" y="3" opacity="0"
+                    width="22" height="6" />
+                <g transform="translate(7,33)">
+                    <circle class="pulse" id="mirrorPulse" cx="0" cy="0" r="7" stroke="#fc4c00" />
+                </g>
+                <rect class="clickableObject" id="mirrorTarget" data-name="mirror" x="3" y="27" opacity="0" width="8"
+                    height="12" />
+                <!-- <g transform="translate(87,51)">
                     <circle class="pulse" id="televisionPulse" cx="0" cy="0" r="7" stroke="#fc4c00" />
                 </g>
                 <rect class="clickableObject" id="televisionTarget" data-name="television" x="80" y="44" opacity="0"
                     width="14" height="13" /> -->
-        </svg>
-      </div>
+            </svg>
+        </div>
     </section>
 
     <div id="popupOverlay" class="overlay"></div>
@@ -148,144 +81,123 @@
     <div id="helpOverlay" class="overlay"></div>
 
     <div id="popupContainer">
-      <div id="popupClose" class="closeBtn"><i class="fas fa-times"></i></div>
-      <div id="phonePopup" class="popupContent">
-        <div class="popupImgContainer">
-          <img
-            class="popupImg"
-            id="phoneImg "
-            src="./images/home_images/phoneexample.png"
-            alt="Phone from the 50s"
-          />
+        <div id="popupClose" class="closeBtn"><i class="fas fa-times"></i></div>
+        <div id="phonePopup" class="popupContent">
+            <div class="popupImgContainer">
+                <img class="popupImg" id="phoneImg " src="./images/home_images/phoneexample.png"
+                    alt="Phone from the 50s" />
+            </div>
+            <div class="popupText">
+                <h2>De telefoon van de Baanmeester</h2>
+                <p>
+                    Een baanmeester kreeg een bepaalde sector van het spoorwegnet
+                    toegewezen. Hij was verantwoordelijk voor het vlot verlopen van het
+                    spoorwegverkeer binnen deze sector, door ervoor te zorgen dat de
+                    sporen werden onderhouden en reparatiewerken werden uitgevoerd. De
+                    baanmeester had hiervoor enkele ploegen spoorleggers onder zich. Een
+                    belangrijke job dus!
+                </p>
+                <p>
+                    Rinkelt de telefoon? Neem dan snel op, en luister naar de opdracht
+                    voor de baanmeester!
+                </p>
+                <button class="popupBtn">Terug naar de woonkamer</button>
+            </div>
         </div>
-        <div class="popupText">
-          <h2>De telefoon van de Baanmeester</h2>
-          <p>
-            Een baanmeester kreeg een bepaalde sector van het spoorwegnet
-            toegewezen. Hij was verantwoordelijk voor het vlot verlopen van het
-            spoorwegverkeer binnen deze sector, door ervoor te zorgen dat de
-            sporen werden onderhouden en reparatiewerken werden uitgevoerd. De
-            baanmeester had hiervoor enkele ploegen spoorleggers onder zich. Een
-            belangrijke job dus!
-          </p>
-          <p>
-            Rinkelt de telefoon? Neem dan snel op, en luister naar de opdracht
-            voor de baanmeester!
-          </p>
-          <button class="popupBtn">Terug naar de woonkamer</button>
+        <div id="tablePopup" class="popupContent">
+            <div class="popupImgContainer">
+                <img src="./images/home_images/affiche.jpg" alt="Old picture from expo '58" class="popupImg"
+                    id="tableImg" />
+            </div>
+            <div class="popupText">
+                <h2>Expo '58</h2>
+                <p>
+                    Op de tafel van het baanmeesterhuis vind je artikels terug van het
+                    jaar 1958. Een historisch jaar voor België, want toen werd in
+                    Brussel de Wereldtentoonstelling gehouden. Het thema van de
+                    tentoonstelling was "Balans van de wereld, voor een menselijkere
+                    wereld".
+                </p>
+                <p>
+                    De trein mocht zeker niet ontbreken op Expo 58. In een station met
+                    acht sporen staan een zestigtal van de allernieuwste
+                    spoorwegvoertuigen van over de hele wereld: dieselen elektrische
+                    locomotieven, dieselmotorwagens, elektrische motorrijtuigen, gewone
+                    rijtuigen, pakwagens en goederenwagens.
+                </p>
+                <button class="popupBtn">Terug naar de woonkamer</button>
+            </div>
         </div>
-      </div>
-      <div id="tablePopup" class="popupContent">
-        <div class="popupImgContainer">
-          <img
-            src="./images/home_images/affiche.jpg"
-            alt="Old picture from expo '58"
-            class="popupImg"
-            id="tableImg"
-          />
+        <div id="portraitPopup" class="popupContent">
+            <div class="popupImgContainer">
+                <video id="guidoVideo" src="./videos/Guido.mp4" webkit-playsinline playsinline></video>
+            </div>
+            <div class="popupText">
+                <h2>De familie Telemans</h2>
+                <p>
+                    Oorspronkelijk was de familie Telemans afkomstig uit Limburg. Het is
+                    ook daar dat hun avonturen begonnen. Vader Telemans startte bij de
+                    NMBS als spoorwegarbeider in Genk en is van daaruit steeds hoger
+                    opgeklommen tot hij ploegbaas was in Hasselt. Na zijn promotie tot
+                    baanmeester in 1939 moest de volledige familie verhuizen naar Evere.
+                </p>
+                <p>
+                    Drie jaar later werd hij baanmeester in Schaarbeek en gingen ze in
+                    het spoorweghuisje wonen dat je hier nu ziet staan. In 1958 ging
+                    vader Telemans met pensioen en moest de familie het huisje verlaten.
+                    Ze hebben daarna nog in Zellik en Ukkel gewoond. Toen de kinderen de
+                    jaren daarop begonnen te trouwen en het huis te verlaten, besloten
+                    de ouders om terug te keren naar Limburg.
+                </p>
+                <button class="popupBtn">Terug naar de woonkamer</button>
+            </div>
         </div>
-        <div class="popupText">
-          <h2>Expo '58</h2>
-          <p>
-            Op de tafel van het baanmeesterhuis vind je artikels terug van het
-            jaar 1958. Een historisch jaar voor België, want toen werd in
-            Brussel de Wereldtentoonstelling gehouden. Het thema van de
-            tentoonstelling was "Balans van de wereld, voor een menselijkere
-            wereld".
-          </p>
-          <p>
-            De trein mocht zeker niet ontbreken op Expo 58. In een station met
-            acht sporen staan een zestigtal van de allernieuwste
-            spoorwegvoertuigen van over de hele wereld: dieselen elektrische
-            locomotieven, dieselmotorwagens, elektrische motorrijtuigen, gewone
-            rijtuigen, pakwagens en goederenwagens.
-          </p>
-          <button class="popupBtn">Terug naar de woonkamer</button>
+        <div id="mirrorPopup" class="popupContent">
+            <div class="popupImgContainer">
+                <img src="./images/home_images/uniform.jpg" alt="uniform" class="popupImg" id="mirorImg" />
+            </div>
+            <div class="popupText">
+                <h2>Het uniform van de baanmeester</h2>
+                <p>
+                    Doorheen de jaren veranderde het uniform van de baanmeester enkele
+                    keren. In het baanmeesterhuis kun je hier een aantal van
+                    bezichtigen.
+                </p>
+                <p>
+                    Kijk eens even in de spiegel. Daar zie je jezelf als een echte
+                    baanmeester!
+                </p>
+                <a class="popupLink" href="https://www.instagram.com/ar/488083272825153/">Zet zelf een hoedje op!</a>
+                <button class="popupBtn">Terug naar de woonkamer</button>
+            </div>
         </div>
-      </div>
-      <div id="portraitPopup" class="popupContent">
-        <div class="popupImgContainer">
-          <video
-            id="guidoVideo"
-            src="./videos/Guido.mp4"
-            webkit-playsinline
-            playsinline
-          ></video>
-        </div>
-        <div class="popupText">
-          <h2>De familie Telemans</h2>
-          <p>
-            Oorspronkelijk was de familie Telemans afkomstig uit Limburg. Het is
-            ook daar dat hun avonturen begonnen. Vader Telemans startte bij de
-            NMBS als spoorwegarbeider in Genk en is van daaruit steeds hoger
-            opgeklommen tot hij ploegbaas was in Hasselt. Na zijn promotie tot
-            baanmeester in 1939 moest de volledige familie verhuizen naar Evere.
-          </p>
-          <p>
-            Drie jaar later werd hij baanmeester in Schaarbeek en gingen ze in
-            het spoorweghuisje wonen dat je hier nu ziet staan. In 1958 ging
-            vader Telemans met pensioen en moest de familie het huisje verlaten.
-            Ze hebben daarna nog in Zellik en Ukkel gewoond. Toen de kinderen de
-            jaren daarop begonnen te trouwen en het huis te verlaten, besloten
-            de ouders om terug te keren naar Limburg.
-          </p>
-          <button class="popupBtn">Terug naar de woonkamer</button>
-        </div>
-      </div>
-      <div id="mirrorPopup" class="popupContent">
-        <div class="popupImgContainer">
-          <img
-            src="./images/home_images/uniform.jpg"
-            alt="uniform"
-            class="popupImg"
-            id="mirorImg"
-          />
-        </div>
-        <div class="popupText">
-          <h2>Het uniform van de baanmeester</h2>
-          <p>
-            Doorheen de jaren veranderde het uniform van de baanmeester enkele
-            keren. In het baanmeesterhuis kun je hier een aantal van
-            bezichtigen.
-          </p>
-          <p>
-            Kijk eens even in de spiegel. Daar zie je jezelf als een echte
-            baanmeester!
-          </p>
-          <a
-            class="popupLink"
-            href="https://www.instagram.com/ar/488083272825153/"
-            >Zet zelf een hoedje op!</a
-          >
-          <button class="popupBtn">Terug naar de woonkamer</button>
-        </div>
-      </div>
     </div>
 
     <div id="helpPopup">
-      <div id="helpClose" class="closeBtn"><i class="fas fa-times"></i></div>
-      <h2>Hoe ontdek je het baanmeesterhuis?</h2>
-      <p>
-        In het baanmeesterhuis valt veel te ontdekken! Deze applicatie
-        ondersteunt jouw bezoek aan het huis, of zorgt voor een op zichzelf
-        staande ervaring. Zo mis je geen enkele ervaring!
-      </p>
-      <p>
-        Om het baanmeesterhuis digitaal te ontdekken, hoef je alleen maar op de
-        objecten te klikken waar een cirkel rond pulseert. Hier krijg je dan
-        alle informatie te zien over dat object of over wat er te beleven valt.
-      </p>
+        <div id="helpClose" class="closeBtn"><i class="fas fa-times"></i></div>
+        <h2>Hoe ontdek je het baanmeesterhuis?</h2>
+        <p>
+            In het baanmeesterhuis valt veel te ontdekken! Deze applicatie
+            ondersteunt jouw bezoek aan het huis, of zorgt voor een op zichzelf
+            staande ervaring. Zo mis je geen enkele ervaring!
+        </p>
+        <p>
+            Om het baanmeesterhuis digitaal te ontdekken, hoef je alleen maar op de
+            objecten te klikken waar een cirkel rond pulseert. Hier krijg je dan
+            alle informatie te zien over dat object of over wat er te beleven valt.
+        </p>
     </div>
 
     <div id="welcomePopup">
-      <div id="welcomeClose" class="closeBtn"><i class="fas fa-times"></i></div>
-      <h2>Welkom in het baanmeesterhuis!</h2>
-      <p>
-        Hier begeef je je in een authentiek huis van een baanmeester van het
-        jaar 1958. Aarzel niet om op de verschillende objecten te klikken om
-        alles te beleven!
-      </p>
-      <button id="welcomeBtn" class="popupBtn">Begin je bezoek!</button>
+        <div id="welcomeClose" class="closeBtn"><i class="fas fa-times"></i></div>
+        <h2>Welkom in het baanmeesterhuis!</h2>
+        <p>
+            Hier begeef je je in een authentiek huis van een baanmeester van het
+            jaar 1958. Aarzel niet om op de verschillende objecten te klikken om
+            alles te beleven!
+        </p>
+        <button id="welcomeBtn" class="popupBtn">Begin je bezoek!</button>
     </div>
-  </body>
+</body>
+
 </html>
