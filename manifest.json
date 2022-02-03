@@ -4,8 +4,8 @@
     "background_color": "#eadec6",
     "display": "fullscreen",
     "orientation": "landscape",
-    "scope": "/docs",
-    "start_url": "/docs/index.html",
+    "scope": "https://www.spoorweghuisje.be/",
+    "start_url": "https://www.spoorweghuisje.be/",
     "icons": [{
             "src": "/docs/images/TrainWorld_512.png",
             "type": "image/png",
