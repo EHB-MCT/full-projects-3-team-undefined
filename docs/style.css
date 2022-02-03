@@ -67,6 +67,10 @@ body {
     color: white !important;
 }
 
+.darkmode>button {
+    color: white !important;
+}
+
 .darkmodePopup {
     background-color: rgb(73, 73, 73) !important;
     color: white !important;
