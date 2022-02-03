@@ -24,7 +24,8 @@ HTML: index.html
 
 For now, working with the live server on VS code.
 
-!! Not working on iphone/macbook !! Bug due to other implementation of flexbox on iOS.
+It is now also possible to use our website as a progressive web app. On chrome in android,
+a banner shows up to add the app to home screen, in iOS you have to do it manually.
 
 ### Sources
 
