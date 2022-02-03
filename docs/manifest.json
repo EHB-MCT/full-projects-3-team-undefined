@@ -5,7 +5,7 @@
     "display": "fullscreen",
     "orientation": "landscape",
     "scope": "https://www.spoorweghuisje.be/",
-    "start_url": "https://www.spoorweghuisje.be/",
+    "start_url": "/",
     "icons": [{
             "src": "/docs/images/TrainWorld_512.png",
             "type": "image/png",
