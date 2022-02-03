@@ -52,7 +52,7 @@ void loop() {
   // Serial.println(distance);
   delay(10);
   checkSwitchState();
-  if (coolDown == false && distance > 104 && !disconnectState) {
+  if (coolDown == false && distance > 150 && !disconnectState) {
     ringBell();
     checkSwitchState();
     if (disconnectState) {
